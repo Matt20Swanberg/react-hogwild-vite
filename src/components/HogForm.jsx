@@ -12,8 +12,8 @@ function HogForm({ onAddHog }) {
         e.preventDefault();
 
         const newHog = {
-            Name: name,
-            Specialty: specialty,
+            name: name,
+            specialty: specialty,
             greased: greased,
             weight: Number(weight),
             "highest medal achieved": medal,
@@ -33,14 +33,14 @@ function HogForm({ onAddHog }) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="hog-name">Hog name:</label>
+                <label htmlFor="hog-name">Name:</label>
                 <input
                     id="hog-name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
 
-                <label htmlFor="hog-greased">Is greased?:</label>
+                <label htmlFor="hog-greased">Greased?</label>
                 <input
                     id="hog-greased"
                     type="checkbox"
@@ -48,7 +48,7 @@ function HogForm({ onAddHog }) {
                     onChange={(e) => setGreased(e.target.checked)}
                 />
 
-                <label htmlFor="hog-specialty">Hog specialty:</label>
+                <label htmlFor="hog-specialty">Specialty:</label>
                 <input
                     id="hog-specialty"
                     value={specialty}
@@ -56,7 +56,7 @@ function HogForm({ onAddHog }) {
 
                 />
 
-                <label htmlFor="hog-weight">Hog weight</label>
+                <label htmlFor="hog-weight">Weight:</label>
                 <input
                     id="hog-weight"
                     value={weight}
@@ -64,7 +64,7 @@ function HogForm({ onAddHog }) {
 
                 />
 
-                <label htmlFor="hog-medal">Hog medal</label>
+                <label htmlFor="hog-medal">Hog medal:</label>
                 <input
                     id="hog-medal"
                     value={medal}
@@ -72,7 +72,7 @@ function HogForm({ onAddHog }) {
 
                 />
 
-                <label htmlFor="hog-image">Hog image</label>
+                <label htmlFor="hog-image">Hog image:</label>
                 <input
                     id="hog-image"
                     value={image}
@@ -81,7 +81,7 @@ function HogForm({ onAddHog }) {
                 />
             </div>
             <div>
-                <button type="submit">Add new hog</button>
+                <button type="submit">Add Hog</button>
             </div>
         </form>
     )

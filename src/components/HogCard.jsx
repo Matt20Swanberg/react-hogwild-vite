@@ -6,23 +6,24 @@ function HogCard({ hog, onHideHog }) {
     return (
         <div
             aria-label="hog card"
+            className="ui card"
             onClick={() => setShowDetails(!showDetails)}
 
         >
             <h3>{hog.name}</h3>
-            <img src={hog.image} alt={hog.name} />
+            <img src={hog.image} alt={"Photo of " + hog.name} />
+            <button onClick={(e) => {
+                e.stopPropagation()
+                onHideHog(hog.name)
+            }}>
+                Hide Me
+            </button>
             {showDetails && (
                 <div>
-                    <p>{hog.specialty}</p>
-                    <p>{hog.greased}</p>
+                    <p>{`Specialty: ${hog.specialty}`}</p>
+                    <p>{hog.greased ? "Greased" : "Nongreased"}</p>
                     <p>{hog.weight}</p>
                     <p>{hog["highest medal achieved"]}</p>
-                    <button onClick={(e) => {
-                        e.stopPropagation()
-                        onHideHog(hog.name)
-                    }}>
-                        Hide Me
-                    </button>
                 </div>
 
             )}
