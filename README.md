@@ -233,15 +233,6 @@ This project reinforced:
 - Reading and debugging test suites
 
 ---
+# Author
 
-# Future Improvements
-
-Potential enhancements:
-
-- Improved card styling/layout
-- Responsive design
-- Form validation
-- Persisting hog data
-- Search functionality
-- Better image handling
-- Animations/transitions
+Created by Matthew Swanberg as part of a lab for course 4 mod 7.
