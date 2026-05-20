@@ -1,3 +1,13 @@
+/**
+ * Main application component for the Hogwild app.
+ *
+ * Responsibilities:
+ * - Stores global hog state
+ * - Handles filtering and sorting
+ * - Adds/removes hogs
+ * - Renders form and hog cards
+ */
+
 import React, { useState } from "react";
 import Nav from "./Nav";
 
@@ -7,10 +17,18 @@ import HogForm from "./HogForm"
 
 
 function App() {
+	// Stores all currently displayed hogs
 	const [hogs, setHogs] = useState(hogData);
+
+	// Controls whether only greased hogs are shown
 	const [greasedOnly, setGreasedOnly] = useState(false);
+
 	const [sortBy, setSortBy] = useState("none")
 
+	/**
+	 * Removes a hog from the displayed hog list.
+	 * @param {string} hogName - Name of hog to hide
+	 */
 	function handleHideHog(hogName) {
 		const updatedHogs = hogs.filter(hog => hog.name !== hogName);
 		setHogs(updatedHogs);
@@ -21,6 +39,7 @@ function App() {
 		setHogs(mergedHogs);
 	}
 
+	// Apply greased filter before sorting hogs
 	let displayedHogs = greasedOnly ? hogs.filter(hog => hog.greased) : hogs
 	if (sortBy === "name") { displayedHogs = [...displayedHogs].sort((a, b) => a.name.localeCompare(b.name)) }
 	if (sortBy === "weight") { displayedHogs = [...displayedHogs].sort((a, b) => a.weight - b.weight) }

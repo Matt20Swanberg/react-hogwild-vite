@@ -1,3 +1,12 @@
+/**
+ * Form component for creating new hogs.
+ *
+ * Responsibilities:
+ * - Manages controlled form inputs
+ * - Builds new hog object
+ * - Sends new hog to parent App component
+ */
+
 import React, { useState } from "react"
 
 function HogForm({ onAddHog }) {
@@ -8,6 +17,10 @@ function HogForm({ onAddHog }) {
     const [medal, setMedal] = useState("");
     const [image, setImage] = useState("");
 
+    /**
+     * Creates a new hog object from form state
+     * and sends it to the parent App component.
+     */
     function handleSubmit(e) {
         e.preventDefault();
 

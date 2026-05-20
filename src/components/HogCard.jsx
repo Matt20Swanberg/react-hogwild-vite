@@ -1,3 +1,12 @@
+/**
+ * Displays an individual hog card.
+ *
+ * Responsibilities:
+ * - Shows hog image/name
+ * - Toggles additional hog details
+ * - Allows user to hide a hog
+ */
+
 import React, { useState } from "react"
 
 function HogCard({ hog, onHideHog }) {
