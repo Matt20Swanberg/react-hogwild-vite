@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function HogCard({ hog }) {
+function HogCard({ hog, onHideHog }) {
     const [showDetails, setShowDetails] = useState(false);
 
     return (
@@ -17,6 +17,12 @@ function HogCard({ hog }) {
                     <p>{hog.greased}</p>
                     <p>{hog.weight}</p>
                     <p>{hog["highest medal achieved"]}</p>
+                    <button onClick={(e) => {
+                        e.stopPropagation()
+                        onHideHog(hog.name)
+                    }}>
+                        Hide Me
+                    </button>
                 </div>
 
             )}
